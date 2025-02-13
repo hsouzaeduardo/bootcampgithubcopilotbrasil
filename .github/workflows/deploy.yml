@@ -53,8 +53,14 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Install uvicorn
-        run: pip install uvicorn
-        
+        run: | 
+          pip install uvicorn
+          pip install pytest-cov
+      
+      - name: Run tests
+        run: |
+          source venv/bin/activate
+          pytest
 
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
